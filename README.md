@@ -8,11 +8,11 @@ What I have used it for:
 
 * Then feed this to an LLM and ask for a summary, or do a word search to find a section of the podcast
 
-Uses the latest WhisperX and Pytorch CPU packages for surprisingly good speed and translation accuracy. The only sorta cool feature is that it throw a time stamp in every five minutes so you can get to the section on the original MP3 if you want.
+MP3toTXT uses the latest WhisperX and Pytorch CPU packages for surprisingly good speed and translation accuracy. It throw a time stamp in every five minutes to allow some rudimentary tracking between your MP3 and the transcript.
 
-If you have a Cuda layer, I would not use this script.  I would suggest Kit-Whisperx github, which is the coolest app ever.  However, it is very slow, and it pulls some other version of some file that makes it painfully slower than this script here.
+If you have a Cuda layer, I would suggest [Kit-Whisperx](https://github.com/rgcodeai/Kit-Whisperx) github, which is a beautiful app ever.  However, it is very slow, and when benchmarked against this script it requires higher weights for equal output.
 
-The Kit-Whisperx package allows you to dial in what version of the weights you want.  The bigger matrix is better accuracy, but really, really slow.  This package uses the tiny.en weights, but in tests, it produce as good of accuracy as the medium in the Kit-Whisperx script.  I've tried to figure out why, and ever patched the Kit-Whisperx to update torch and upgrade to Whisperx 3.3.1. 
+The MP3ToTXT package uses the tiny.en weights, but in tests, it produce as good of accuracy as the medium in the Kit-Whisperx script.  I'm not sure why it does so well, but I encourage you to benchmark for yourself.
 
 So, this is a quick and dirty answer if you don't have any speed.
 
@@ -20,11 +20,12 @@ When you run it, it will give warnings like
 
 ```python MP3toTXT.py
 INFO:speechbrain.utils.quirks:Applied quirks (see `speechbrain.utils.quirks`): [disable_jit_profiling, allow_tf32]
-INFO:speechbrain.utils.quirks:Excluded quirks specified by the `SB_DISABLE_QUIRKS` environment (comma-separated list): []
+INFO:speechbrain.utils.quirks:Excluded quirks specified by the `SB_DISABLE_QUIRKS` environment (comma-separated list): 
 Model was trained with pyannote.audio 0.0.1, yours is 3.3.2. Bad things might happen unless you revert pyannote.audio to 0.x.
 Model was trained with torch 1.10.0+cu102, yours is 2.6.0+cpu. Bad things might happen unless you revert torch to 1.x.
 ```
-This is a lie of course and you don't need to worry about it.  It runs just fine.
+
+You don't need to worry about it.  It runs just fine.
 
 Finally, it creates just a mess of text. So, you can run ppsplit script in the other repository to chunk it up and make it more readable.  Not necessary for an LLM to digest.
 
