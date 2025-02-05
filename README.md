@@ -12,20 +12,23 @@ Uses the latest WhisperX and Pytorch CPU packages for surprisingly good speed an
 
 #### What Do I Need?
 
-If you are not familiar with setting up python script on Windows this will be a bit of a challenge, but here is a start
+While the script is here, and you could "just run it," I think it is better to set up a virtual environment to run it in.  
+
+Why?  Because It has a ton of dependancies, and you need to bring up a series of pytorch on CPU programs for it to run.
+
+Once you have cloned the directory, I suggest that you do the following:
 
 ```Powershell
 # 1. 
-Install pyvenv
+# Install pyvenv to manage the virtual environment.
+# Most AI will help you do this
 
-# 2. Restart Powershell
+# 2. Restart PowerShell session
+# Close and reopen PowerShell after pyvenv
 
-Do these commands:
+# 3. cd to the clone github
 
-# 3. Restart PowerShell session
-# Close and reopen PowerShell as Administrator
-
-# 4. Install Python 3.10.0
+# 4. Install Python 3.11.0
 pyenv install 3.11.0
 
 # 5. Set as local Python version
@@ -37,9 +40,14 @@ python -m venv MP3ToTXT
 # 7. Turn it on
 
 .\MP3ToTXT\Scripts\Activate.ps1
+
+
+# 8. Check to verify that you are running Python 3.11.0
+
+python --version
 ```
 
-Now install all dependancies as per the Installed_Packages.txt file
+Now install all dependancies as per the Installed_Packages.txt file in the virtual environment.  
 
 Run the program
 
