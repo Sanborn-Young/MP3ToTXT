@@ -10,6 +10,12 @@ What I have used it for:
 
 Uses the latest WhisperX and Pytorch CPU packages for surprisingly good speed and translation accuracey
 
+If you have a Cuda layer, I would not use this script.  I would suggest Kit-Whisperx github, which is the coolest app ever.  However, it is very slow, and it pulls some other version of some file that makes it painfully slower than this script here.
+
+So, this is a quick and dirty answer if you don't have any speed.
+
+Finally, it creates just a mess of text. So, you can run ppsplit script in the other repository to chunk it up and make it more readable.  Not necessary for an LLM to digest.
+
 #### What Do I Need?
 
 While the script is here, and you could "just run it," I think it is better to set up a virtual environment to run it in.  
@@ -47,9 +53,21 @@ python -m venv MP3ToTXT
 python --version
 ```
 
-Now install all dependancies as per the Installed_Packages.txt file in the virtual environment.  
+What I will tell you is that you should immediately upgrade pip.
 
-Run the program
+Start off by by installing whisperx 3.3.1.  This is a little fickle, and I may have installed it using a wheel.  However, you can try 
+
+```powershell
+pip install whisperx==3.3.1
+```
+
+If you have never done anything with pytorch, torch, and torchaudio, you are on the verge of being in "dependancy heck" because it doesn't support the latest python, the latest whisperx, and other packages. I've settled on 3.11, but I don't know if this is best.
+
+Whatever you do, don't install torchvision because it really due on a dependancy matrix very hard to solve, and you don't need it for audio.
+
+After you have installed whisperX, it will install a lot of the packages.
+
+Other dependancies as per the Installed_Packages.txt file.Run the program
 
 #### Why does the Main Script Look Weird and why do you have a SPEC file
 
