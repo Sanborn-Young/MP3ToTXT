@@ -13,6 +13,7 @@ Uses the latest WhisperX and Pytorch CPU packages for surprisingly good speed an
 
 If you are not familiar with setting up python script on Windows this will be a bit of a challenge, but here is a start
 
+```Powershell
 # 1. 
 Install pyvenv
 
@@ -35,6 +36,7 @@ python -m venv MP3ToTXT
 # 7. Turn it on
 
 .\MP3ToTXT\Scripts\Activate.ps1
+```
 
 Now install all dependancies as per the Installed_Packages.txt file
 
