@@ -2,12 +2,13 @@
 
 What I have used it for:
 
-Download a five hour podcast
-Turn this into a text file in less than 30 minutes on an AMD Ryzen 5 4500U with 8GB RAM
-Then feed this to an LLM and ask for a summary, or do a word search to find a section of the podcast
+* Download a five hour podcast
+
+* Turn this into a text file in less than 30 minutes on an AMD Ryzen 5 4500U with 8GB RAM
+
+* Then feed this to an LLM and ask for a summary, or do a word search to find a section of the podcast
 
 Uses the latest WhisperX and Pytorch CPU packages for surprisingly good speed and translation accuracey
-
 
 #### What Do I Need?
 
@@ -43,7 +44,6 @@ Now install all dependancies as per the Installed_Packages.txt file
 Run the program
 
 #### Why does the Main Script Look Weird and why do you have a SPEC file
-
 
 While the current script works, it is in the process of being debugged so that I can compile it, insert FFMPEG into the .exe, and allow anybody to run it from a command line.  However, compiling from python script to .exe is a big task, and this is in a half built state
 
