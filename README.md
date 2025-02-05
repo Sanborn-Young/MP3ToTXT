@@ -31,6 +31,8 @@ Finally, it creates just a mess of text. So, you can run ppsplit script in the o
 
 #### What Do I Need?
 
+It needs FFMPEG.exe to run.  If you don't have it in your path, you are going to need to go and get it and download it.  I suggest that you can just simply put it by the python script if you don't install it and get it into your PATH env variable.  If you don't have it, when you run the script, it will give you a weird error message that doesn't look like "you're missing the FFMPEG.exe file."  So, put it in.
+
 While the script is here, and you could "just run it," I think it is better to set up a virtual environment to run it in.  
 
 Why?  Because It has a ton of dependancies, and you need to bring up a series of pytorch on CPU programs for it to run.
@@ -38,14 +40,13 @@ Why?  Because It has a ton of dependancies, and you need to bring up a series of
 Once you have cloned the directory, I suggest that you do the following:
 
 ```Powershell
-# 1. 
-# Install pyvenv to manage the virtual environment.
-# Most AI will help you do this
+# 1. Install pyenv to manage the virtual environment.
+# Most AI will help you pip the package.  It really simple once your understand it.
 
 # 2. Restart PowerShell session
 # Close and reopen PowerShell after pyvenv
 
-# 3. cd to the clone github
+# 3. cd to the clone github most likely MP3ToTXT subdirectory on your machine
 
 # 4. Install Python 3.11.0
 pyenv install 3.11.0
@@ -74,9 +75,9 @@ Start off by by installing whisperx 3.3.1.  This is a little fickle, and I may h
 pip install whisperx==3.3.1
 ```
 
-If you have never done anything with pytorch, torch, and torchaudio, you are on the verge of being in "dependancy heck" because it doesn't support the latest python, the latest whisperx, and other packages. I've settled on 3.11, but I don't know if this is best.
+If you have never done anything with pytorch, torch, and torchaudio, you are on the verge of being in "dependancy heck" because you need to blend python, whisperx, and other packages. I've settled on 3.11 for the virtual python environment, but I don't know if this is best.
 
-Whatever you do, don't install torchvision because it really due on a dependancy matrix very hard to solve, and you don't need it for audio.
+Whatever you do, don't install torchvision because it creates a crazy dependancy matrix which is very hard to solve, and you don't need it for audio.
 
 After you have installed whisperX, it will install a lot of the packages.
 
