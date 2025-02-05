@@ -12,6 +12,8 @@ Uses the latest WhisperX and Pytorch CPU packages for surprisingly good speed an
 
 If you have a Cuda layer, I would not use this script.  I would suggest Kit-Whisperx github, which is the coolest app ever.  However, it is very slow, and it pulls some other version of some file that makes it painfully slower than this script here.
 
+The Kit-Whisperx package allows you to dial in what version of the weights you want.  The bigger matrix is better accuracy, but really, really slow.  This package uses the tiny.en weights, but in tests, it produce as good of accuracy as the medium in the Kit-Whisperx script.  I've tried to figure out why, and ever patched the Kit-Whisperx to update torch and upgrade to Whisperx 3.3.1.  Not sure why because this package uses tiny.en, which should be far worse.
+
 So, this is a quick and dirty answer if you don't have any speed.
 
 Finally, it creates just a mess of text. So, you can run ppsplit script in the other repository to chunk it up and make it more readable.  Not necessary for an LLM to digest.
