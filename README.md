@@ -8,7 +8,7 @@ What I have used it for:
 
 * Then feed this to an LLM and ask for a summary, or do a word search to find a section of the podcast
 
-Uses the latest WhisperX and Pytorch CPU packages for surprisingly good speed and translation accuracey
+Uses the latest WhisperX and Pytorch CPU packages for surprisingly good speed and translation accuracy. The only sorta cool feature is that it throw a time stamp in every five minutes so you can get to the section on the original MP3 if you want.
 
 If you have a Cuda layer, I would not use this script.  I would suggest Kit-Whisperx github, which is the coolest app ever.  However, it is very slow, and it pulls some other version of some file that makes it painfully slower than this script here.
 
